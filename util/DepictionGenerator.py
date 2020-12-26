@@ -301,7 +301,7 @@ class DepictionGenerator:
         """
         try:
             changelog = []
-            for version in tweak_data['changelog'][::-1]:
+            for version in tweak_data['changelog']:
                 ver_entry = {
                     "class": "DepictionMarkdownView",
                     "markdown": "#### Version {0}\n\n{1}".format(version['version'], version['changes']),
@@ -354,7 +354,7 @@ class DepictionGenerator:
         """
         element = ""
         try:
-            for version in tweak_data['changelog'][::-1]:
+            for version in tweak_data['changelog']:
                 element += DepictionGenerator.ChangelogEntry(self, version['version'], version['changes'])
             return element
         except Exception:
